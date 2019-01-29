@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employee;
+use Validator;
 
 class EmployeeController extends Controller
 {
@@ -19,17 +20,20 @@ class EmployeeController extends Controller
      return view('employee.create');
     }
     function store(Request $request){
- 
+      $validator = Validator::make($request->all(), [
+        'employee_id' => 'required|string|max:10', 'employee_name' => 'required|string|max:50', 
+        'employee_adderess' => 'required|string|max:552', 'employee_phone_number' => 'required|string|max:50'
+      ])->validate();
        
-     $txtId = $request->input('txt_id');
+    //  $txtId = $request->input('txt_id');
 
-      $txtName = $request->input('txt_name');
+    //   $txtName = $request->input('txt_name');
      
-      $txtAddress = $request->input('txt_address');
+    //   $txtAddress = $request->input('txt_address');
 
-      $txtPhoneNumber = $request->input('txt_phone_number');
+    //   $txtPhoneNumber = $request->input('txt_phone_number');
       
-      echo $txtId. " <br />" .$txtName. " <br />" . $txtAddress. " <br />". $txtId. " " ;
+    //   echo $txtId. " <br />" .$txtName. " <br />" . $txtAddress. " <br />". $txtId. " " ;
     
       Employee::create([
         'employee_id'=>$txtId, 'employee_name'=>$txtName, 'employee_address'=> $txtAddress, 'employee_phone_number'=> $txtPhoneNumber

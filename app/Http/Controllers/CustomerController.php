@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Customer;
 
+
 class CustomerController extends Controller
 {
     //buat fungsi baru untuk index
@@ -21,7 +22,9 @@ class CustomerController extends Controller
     }
     function store(Request $request){
        //echo "OLAF";
-       
+        //buat validator
+      
+
      $txtId = $request->input('txt_id');
 
       $txtName = $request->input('txt_name');
@@ -58,6 +61,8 @@ class CustomerController extends Controller
      }
 
      public function update(Request $request, $id){
+      
+
       $txtId = $request->input('txt_id');
       
             $txtName = $request->input('txt_name');

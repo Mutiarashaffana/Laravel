@@ -45,3 +45,4 @@ Route::get('/brokoli/dewa', 'CapungController@siti');
 Route::resource('/Customer', 'CustomerController');
 Route::resource('/Supplier', 'SupplierController');
 Route::resource('/Employee', 'EmployeeController');
+Route::get('/Home', 'HomeController@index');
